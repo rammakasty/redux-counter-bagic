@@ -2,11 +2,11 @@ import { useSelector } from 'react-redux';
 import './App.css';
 
 function App() {
-    const data = useSelector((state) => {
-        return state;
+    const counter = useSelector((state) => {
+        return state.counter;
     });
 
-    console.log('data', data);
+    console.log('counter', counter);
 
     return <div>redux</div>;
 }
