@@ -1,12 +1,19 @@
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
-import { plusOne } from './redux/modules/counter';
+import { plusN } from './redux/modules/counter';
 import { minusOne } from './redux/modules/counter';
 
 function App() {
+    const [number, setNumber] = useState(0);
+
     const counter = useSelector((state) => {
         return state.counter;
     });
+
+    // useEffect(() => {
+    //     console.log('number -> ' + number);
+    // }, [number]);
 
     // dispatch를 가져오자
     const dispatch = useDispatch();
@@ -14,13 +21,19 @@ function App() {
     return (
         <>
             <div>현재 카운트 : {counter.number}</div>
+            <div>
+                <input
+                    type="number"
+                    value={number}
+                    onChange={(event) => {
+                        setNumber(event.target.value);
+                    }}
+                />
+            </div>
             <button
                 onClick={() => {
-                    // +1을 해주는 로직을 써주면 된다.
-                    // dispatch({
-                    //     type: PLUS_ONE,
-                    // });
-                    dispatch(plusOne());
+                    ///  dispatch(plusOne());
+                    dispatch(plusN(number));
                 }}
             >
                 +
