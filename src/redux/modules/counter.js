@@ -8,6 +8,10 @@ const counter = (state = initialState, action) => {
             return {
                 number: state.number + 1,
             };
+        case 'MINUS_ONE':
+            return {
+                number: state.number - 1,
+            };
         default:
             return state;
     }

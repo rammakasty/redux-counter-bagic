@@ -25,6 +25,15 @@ function App() {
             >
                 +
             </button>
+            <button
+                onClick={() => {
+                    dispatch({
+                        type: 'MINUS_ONE',
+                    });
+                }}
+            >
+                -
+            </button>
         </>
     );
 }
