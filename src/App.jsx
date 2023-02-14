@@ -1,8 +1,13 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 
 function App() {
     const counter = useSelector((state) => {
+        return state.counter;
+    });
+
+    // dispatch를 가져오자
+    const dispatch = useDispatch((state) => {
         return state.counter;
     });
 
@@ -11,7 +16,15 @@ function App() {
     return (
         <>
             <div>현재 카운트 : {counter.number}</div>
-            <button>+</button>
+            <button
+                onClick={() => {
+                    dispatch({
+                        type: 'PLUS_ONE',
+                    });
+                }}
+            >
+                +
+            </button>
         </>
     );
 }
