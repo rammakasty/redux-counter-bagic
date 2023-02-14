@@ -6,9 +6,14 @@ function App() {
         return state.counter;
     });
 
-    console.log('counter', counter);
+    console.log('counter -> ', counter.number);
 
-    return <div>redux</div>;
+    return (
+        <>
+            <div>현재 카운트 : {counter.number}</div>
+            <button>+</button>
+        </>
+    );
 }
 
 export default App;
