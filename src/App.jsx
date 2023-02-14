@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
+import { PLUS_ONE } from './redux/modules/counter';
+import { MINUS_ONE } from './redux/modules/counter';
 
 function App() {
     const counter = useSelector((state) => {
@@ -7,11 +9,7 @@ function App() {
     });
 
     // dispatch를 가져오자
-    const dispatch = useDispatch((state) => {
-        return state.counter;
-    });
-
-    console.log('counter -> ', counter.number);
+    const dispatch = useDispatch();
 
     return (
         <>
@@ -19,7 +17,7 @@ function App() {
             <button
                 onClick={() => {
                     dispatch({
-                        type: 'PLUS_ONE',
+                        type: PLUS_ONE,
                     });
                 }}
             >
@@ -28,7 +26,7 @@ function App() {
             <button
                 onClick={() => {
                     dispatch({
-                        type: 'MINUS_ONE',
+                        type: MINUS_ONE,
                     });
                 }}
             >
