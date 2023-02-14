@@ -1,6 +1,20 @@
 // action value
 export const PLUS_ONE = 'PLUS_ONE';
 export const MINUS_ONE = 'counter/MINUS_ONE';
+
+// action creator : action value를 return하는 함수
+export const plusOne = () => {
+    return {
+        type: PLUS_ONE,
+    };
+};
+
+export const minusOne = () => {
+    return {
+        type: MINUS_ONE,
+    };
+};
+
 const initialState = {
     number: 0,
 };
